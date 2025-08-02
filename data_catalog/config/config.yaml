@@ -1,0 +1,52 @@
+database:
+  url: "sqlite:///./data/data_catalog.db"
+  pool_size: 5
+  max_overflow: 10
+
+ai:
+  gemini_api_key: "AIzaSyBF9WHShOcTkC4EYQEk5fz25KEHBC7bEl0"
+  model_name: "gemini-1.5-flash"
+  max_tokens: 2000
+  temperature: 0.7
+
+services:
+  metadata_processor: "http://metadata-processor:8001"
+  ai_agent: "http://ai-agent:8002"
+  catalog_api: "http://catalog-api:8003"
+
+# New configuration-driven data sources. The 'type' must be one of the supported processors.
+data_sources:
+  - name: "Starburst Production"
+    type: "starburst"
+    config:
+      host: "prod-starburst.yourcompany.com"
+      port: 8443
+      user: "prod-user"
+      password: "prod-password"
+      catalog: "hive_prod"
+      use_https: true
+
+  - name: "Starburst Dev"
+    type: "starburst"
+    config:
+      host: "dev-starburst.yourcompany.com"
+      port: 8080
+      user: "dev-user"
+      password: "dev-password"
+      catalog: "hive_dev"
+      use_https: false
+      
+  - name: "Local SQL DDL Files"
+    type: "sql_ddl"
+    config:
+      file_path: "/data/ddl_files"
+
+  - name: "Local PySpark Scripts"
+    type: "pyspark_sql"
+    config:
+      file_path: "/data/pyspark_scripts"
+      
+  - name: "Data Model Diagram"
+    type: "image_diagram"
+    config: {}
+
