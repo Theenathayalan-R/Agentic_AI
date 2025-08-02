@@ -4,7 +4,7 @@ database:
   max_overflow: 10
 
 ai:
-  gemini_api_key: "AIzaSyBF9WHShOcTkC4EYQEk5fz25KEHBC7bEl0"
+  gemini_api_key: "AIzaSyBF9WHShOcTkC4EYQEk5fz25KEHBC7bEl"
   model_name: "gemini-1.5-flash"
   max_tokens: 2000
   temperature: 0.7

@@ -5,7 +5,7 @@ class AiSettings(BaseSettings):
     Configuration settings for AI services.
     The gemini_api_key is set directly here to ensure it's always loaded.
     """
-    gemini_api_key: str = "AIzaSyBF9WHShOcTkC4EYQEk5fz25KEHBC7bEl0"
+    gemini_api_key: str = "AIzaSyBF9WHShOcTkC4EYQEk5fz25KEHBC7bEl"
     model_name: str = "gemini-1.5-flash"
     max_tokens: int = 2000
     temperature: float = 0.7
